@@ -66,8 +66,12 @@ type variableProperties struct {
 		Override_rs_driver struct {
 			Cflags []string
 		}
-		
+
 		Has_legacy_camera_hal1 struct {
+			Cflags []string
+		}
+
+		Uses_media_extensions struct {
 			Cflags []string
 		}
 
@@ -145,6 +149,7 @@ type productVariables struct {
 	Has_legacy_camera_hal1     *bool `json:",omitempty"`
 	Treble                     *bool `json:",omitempty"`
 	Pdk                        *bool `json:",omitempty"`
+	Uses_media_extensions      *bool `json:",omitempty"`
 
 	IntegerOverflowExcludePaths *[]string `json:",omitempty"`
 
