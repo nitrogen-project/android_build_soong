@@ -37,4 +37,5 @@ optional_subdirs = [
     "vendor/*/*",
     "vendor/*/*/*",
     "vendor/*/*/*/*/*",
+    "vendor/*/*/*/*/*/*",
 ]
