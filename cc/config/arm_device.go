@@ -116,7 +116,7 @@ var (
 			"-D__ARM_FEATURE_LPAE=1",
 		},
 		"krait": []string{
-			"-mcpu=cortex-a15",
+			"-mtune=cortex-a15",
 			"-mfpu=neon-vfpv4",
 			// Fake an ARM compiler flag as these processors support LPAE which GCC/clang
 			// don't advertise.
@@ -173,7 +173,7 @@ func init() {
 
 	// Krait is not supported by GCC, but is supported by Clang, so
 	// override the definitions when building modules with Clang.
-	replaceFirst(armClangCpuVariantCflags["krait"], "-mcpu=cortex-a15", "-mcpu=krait")
+	replaceFirst(armClangCpuVariantCflags["krait"], "-mtune=cortex-a15", "-mcpu=krait")
 
 	// The reason we use "-march=armv8-a+crc", instead of "-march=armv8-a", for
 	// gcc is the latter would conflict with any specified/supported -mcpu!
