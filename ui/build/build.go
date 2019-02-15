@@ -265,6 +265,10 @@ func Build(ctx Context, config Config) {
 		dataClean(ctx, config)
 		ctx.Println("Deleted data files.")
 		return
+	} else if inList("targetclean", config.Arguments()) {
+		productClean(ctx, config, what)
+		ctx.Println("Deleted product directories.")
+		return
 	}
 
 	if what&RunSoong != 0 {
